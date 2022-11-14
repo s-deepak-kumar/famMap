@@ -12,4 +12,4 @@ I used tools that make it easy to get right into what matters: creating a native
 4. Enable **Google Authentication** & **Firestore** in Firebase
 5. Run the app & Enjoy!
 
-**Note:** Download debug apk (app-debug.apk) from **app/build/outputs/apk/debug** folder
+**Note (for testing):** Download debug apk (app-debug.apk) file
