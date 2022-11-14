@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:background="#99FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/cancelButton"
+            android:background="@drawable/transparent_button_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCEL"
+            android:drawableTint="@color/black"
+            android:drawablePadding="10dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15sp"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:drawableRight="@drawable/ic_cancel" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="25dp"
+        app:cardBackgroundColor="@color/green"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="4dp"
+                android:background="@drawable/bg_round_primary_color"
+                android:backgroundTint="@color/white"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Just login with\nyour Google account!"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <LinearLayout
+                                android:id="@+id/gmailContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:paddingRight="15dp"
+                                android:paddingLeft="15dp"
+                                android:background="@drawable/bg_google_login_btn">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="Login via Google"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/green"
+                                    android:gravity="center"
+                                    android:drawablePadding="20dp"
+                                    android:drawableStart="@drawable/ic_gmail"
+                                    android:drawableEnd="@drawable/ic_right_angle"
+                                    android:drawableTint="@color/green">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/progressBarGmail"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:theme="@style/ProgressBarColor"
+                                android:layout_gravity="center"
+                                android:visibility="gone"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Login with your Google account to\nunblock some great feature!"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="13sp"
+                            android:textStyle="italic"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="10dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

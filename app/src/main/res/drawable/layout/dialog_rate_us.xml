@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:background="#CCFFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/top_corner_round_bk">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RATE US!"
+                android:textColor="@color/primary_icon_color"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:gravity="end|center">
+
+                <ImageButton
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_cancel"
+                    android:padding="3dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/secondary_text_color"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <RatingBar
+                    android:id="@+id/rateStars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="1.0"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    style="@style/AppRatingBar" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6">
+
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Support Us By Give 5 Star And Write Your Review!"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:textSize="15sp"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/secondary_text_color"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:background="@drawable/clickable_text_bk"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:id="@+id/cancelDialog"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:text="CANCEL"
+                                android:textAlignment="center"
+                                android:gravity="center"
+                                android:textColor="@color/secondary_icon_color"
+                                android:textStyle="bold"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginTop="15dp">
+
+                                <TextView
+                                    android:background="@drawable/button_bk"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:id="@+id/rateUsButton"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:text="RATE US"
+                                    android:textAlignment="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    android:padding="10dp"/>
+
+                                <ProgressBar
+                                    android:id="@+id/progressBar"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:theme="@style/ProgressBarColor"
+                                    android:layout_gravity="center"
+                                    android:visibility="gone"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

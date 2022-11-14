@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/primary_background_color">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/primary_background_color">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collaptoolbar"
+            android:layout_height="152dp"
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:expandedTitleMarginStart="15dp"
+            app:expandedTitleMarginEnd="15dp"
+            app:expandedTitleMarginTop="20dp"
+            app:expandedTitleMarginBottom="20dp"
+            app:expandedTitleGravity="center|bottom"
+            app:expandedTitleTextAppearance="@style/ExpandedCollapsingActivityTitle"
+            app:contentScrim="@color/primary_background_color">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="2021"
+                app:titleTextColor="@color/white"
+                app:layout_collapseMode="pin" >
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            app:tabIndicatorColor="@color/secondary_icon_color"
+            app:tabIndicatorHeight="3dp"
+            app:tabMaxWidth="0dp"
+            app:tabGravity="start"
+            app:tabIndicatorFullWidth="false"
+            app:tabTextAppearance="@style/TabLayoutTextStyleSmall"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/secondary_text_color"
+            app:tabIndicator="@drawable/indicator"
+            app:tabMode="fixed"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_gravity="center"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

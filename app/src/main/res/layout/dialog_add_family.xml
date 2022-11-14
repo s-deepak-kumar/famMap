@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:background="#99FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/cancelButton"
+            android:background="@drawable/transparent_button_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CANCEL"
+            android:drawableTint="@color/black"
+            android:drawablePadding="10dp"
+            android:textColor="@color/black"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15sp"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:drawableRight="@drawable/ic_cancel" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="25dp"
+        app:cardBackgroundColor="@color/green"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="4dp"
+                android:background="@drawable/bg_round_primary_color"
+                android:backgroundTint="@color/white"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add your\nfamily members!"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Email"
+                                android:textColorHint="@color/black"
+                                app:counterTextColor="@color/black"
+                                app:boxStrokeColor="@color/black"
+                                app:hintTextColor="@color/black"
+                                app:boxStrokeWidth="2dp"
+                                app:boxStrokeWidthFocused="2.5dp"
+                                app:placeholderTextColor="@color/black"
+                                app:boxCornerRadiusBottomStart="10dp"
+                                app:boxCornerRadiusBottomEnd="10dp"
+                                app:boxCornerRadiusTopEnd="10dp"
+                                app:boxCornerRadiusTopStart="10dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/emailEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"/>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <ProgressBar
+                                android:id="@+id/progressBarGmail"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:theme="@style/ProgressBarColor"
+                                android:layout_gravity="center"
+                                android:visibility="gone"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Choose Relation:"
+                            android:textColor="@color/white"
+                            android:gravity="start"
+                            android:layout_marginTop="10dp"/>
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:singleSelection="true">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipFather"
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Father" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipMother"
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mother" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipBrother"
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Brother" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipSister"
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sister" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipWife"
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Wife" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipHusband"
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Husband" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipFriend"
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Friend" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipColleage"
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Colleague" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipOthers"
+                                style="@style/Widget.MaterialComponents.Chip.Filter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Others" />
+
+                        </com.google.android.material.chip.ChipGroup>
+
+                        <LinearLayout
+                            android:id="@+id/addMemberButton"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_round_primary_color"
+                            android:gravity="center"
+                            android:backgroundTint="@color/white"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/addMemberText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Add Member"
+                                android:gravity="center"
+                                android:textSize="15sp"
+                                android:textColor="@color/green"
+                                android:textStyle="bold" />
+
+                            <ProgressBar
+                                android:id="@+id/progressBar"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:theme="@style/ProgressBarColor"
+                                android:layout_gravity="center"
+                                android:indeterminateTint="@color/green"
+                                android:visibility="gone"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

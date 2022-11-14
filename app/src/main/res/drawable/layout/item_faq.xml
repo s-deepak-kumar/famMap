@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="10dp"
+    android:gravity="center"
+    android:id="@+id/linearLayout"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:text="What is Movies Buddy Pro?"
+        app:drawableEndCompat="@drawable/ic_baseline_add_24"
+        android:background="@drawable/explore_item_bk"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/answerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/faq_open_answer_bg"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="What is Movies Buddy Pro?"/>
+
+        <TextView
+            android:id="@+id/playVideoTutorialButton"
+            android:background="@drawable/transparent_button_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="Play Video Tutorial"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:drawableLeftCompat="@drawable/ic_play"
+            android:drawablePadding="10dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            app:drawableTint="@color/white"
+            visiblity="gone"/>
+
+    </LinearLayout>
+
+</LinearLayout>

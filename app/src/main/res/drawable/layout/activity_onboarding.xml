@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/primary_background_color">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/pagerDotsIndicator">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/onboardingViewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"/>
+
+        <!--<ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="117dp"
+            android:layout_height="54dp"
+            android:src="@mipmap/movies_flask_logo"
+            android:contentDescription="@string/app_logo_string"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"/>-->
+
+    </FrameLayout>
+
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/pagerDotsIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:dotsColor="#4DFFFFFF"
+        app:dotsCornerRadius="8dp"
+        app:dotsSize="9dp"
+        app:dotsSpacing="4dp"
+        app:dotsWidthFactor="2.5"
+        app:progressMode="false"
+        app:selectedDotColor="#99FFFFFF"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/getStartedLayout"/>
+
+    <LinearLayout
+        android:id="@+id/getStartedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/getStartedButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:background="@drawable/button_bk"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/get_started_button_string"
+            android:textColor="@color/white"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:indeterminate="true"
+            android:indeterminateOnly="false"
+            android:theme="@style/ProgressBarColor"
+            android:layout_margin="20dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

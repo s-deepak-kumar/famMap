@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:background="#CCFFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/top_corner_round_bk">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONTACT US!"
+                android:textColor="@color/primary_icon_color"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:gravity="end|center">
+
+                <ImageButton
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_cancel"
+                    android:padding="3dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/secondary_text_color"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:id="@+id/download_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PING US\nVIA THESE SOCIAL MEDIA"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/whatsappContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="15dp"
+                        android:paddingLeft="15dp"
+                        android:background="@drawable/shadow_secondary_icon_bt_bk">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Whatsapp"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#ffffff"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="20dp"
+                            app:drawableStartCompat="@drawable/ic_whatsapp"
+                            app:drawableEndCompat="@drawable/ic_right_angle"
+                            app:drawableTint="@color/white">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/facebookContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="15dp"
+                        android:paddingLeft="15dp"
+                        android:background="@drawable/shadow_secondary_icon_bt_bk"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Facebook"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#ffffff"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="20dp"
+                            app:drawableStartCompat="@drawable/ic_facebook"
+                            app:drawableEndCompat="@drawable/ic_right_angle"
+                            app:drawableTint="@color/white">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/instagramContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="15dp"
+                        android:paddingLeft="15dp"
+                        android:background="@drawable/shadow_secondary_icon_bt_bk"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Instagram"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#ffffff"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="20dp"
+                            app:drawableEndCompat="@drawable/ic_right_angle"
+                            app:drawableStartCompat="@drawable/ic_instagram"
+                            app:drawableTint="@color/white">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/twitterContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="15dp"
+                        android:paddingLeft="15dp"
+                        android:background="@drawable/shadow_secondary_icon_bt_bk"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Twitter"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#ffffff"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="20dp"
+                            app:drawableStartCompat="@drawable/ic_twitter"
+                            app:drawableEndCompat="@drawable/ic_right_angle"
+                            app:drawableTint="@color/white">
+
+                        </TextView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/telegramContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="15dp"
+                        android:paddingLeft="15dp"
+                        android:background="@drawable/shadow_secondary_icon_bt_bk"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Telegram"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#ffffff"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="20dp"
+                            app:drawableEndCompat="@drawable/ic_right_angle"
+                            app:drawableStartCompat="@drawable/ic_telegram"
+                            app:drawableTint="@color/white">
+
+                        </TextView>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="@string/for_query_string"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

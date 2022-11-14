@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/primary_background_color">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:background="@color/primary_background_color">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <ImageButton
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:id="@+id/faqButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_faq"
+                    android:padding="3dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_gravity="center_vertical"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginEnd="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:gravity="center"
+                        android:textAppearance="@style/AppTitle"
+                        android:textColor="@color/secondary_icon_color"/>
+
+                    <!--<ImageView
+                        android:id="@+id/appLogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="37dp"
+                        android:src="@drawable/movies_buddy_pro_logo_final"
+                        android:contentDescription="@string/app_logo_string"
+                        android:layout_gravity="center"/>-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center|end"
+                    android:layout_marginEnd="15dp">
+
+                    <ImageButton
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:id="@+id/searchButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_search"
+                        android:padding="3dp"
+                        android:layout_marginStart="15dp"/>
+
+                    <ImageButton
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:id="@+id/downloadButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_download"
+                        android:padding="3dp"
+                        android:layout_marginStart="15dp"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/loadingLayoutProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:indeterminate="true"
+                android:indeterminateOnly="false"
+                android:theme="@style/ProgressBarColor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOADING"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/notFoundLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_not_found_emoji" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OOOPS... FAILED TO LOAD"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please Check Your Internet Connection &amp; Try Again."
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/retryButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Retry"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:background="@drawable/button_bk"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="13sp"
+                android:layout_marginTop="15dp"/>
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/latestItemSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="370dp"
+                    app:sliderAnimationDuration="600"
+                    app:sliderAutoCycleDirection="left"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="700"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMargin="5dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="3dp"
+                    app:sliderIndicatorRadius="2dp"
+                    app:sliderIndicatorSelectedColor="@color/secondary_icon_color"
+                    app:sliderIndicatorUnselectedColor="@color/primary_icon_color"
+                    app:sliderScrollTimeInSec="1"
+                    app:sliderStartAutoCycle="true" />
+
+                <LinearLayout
+                    android:id="@+id/hindiLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:id="@+id/hindiTabButton"
+                            android:background="?android:attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_marginStart="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:text="Hindi"
+                                android:layout_gravity="center"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/secondary_text_color"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:text="Songs"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_marginStart="5dp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end|center_vertical"
+                            android:layout_marginEnd="15dp" >
+
+                            <ImageButton
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:id="@+id/loadMoreHindiButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_right_arrow"
+                                android:padding="5dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/hindiRecyleview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="18dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="10dp"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never"/>
+
+                        <LinearLayout
+                            android:id="@+id/hindiLoadingLayout"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/both_left_circular_bk"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_gravity="end|center"
+                            android:layout_marginBottom="30dp"
+                            android:visibility="gone">
+
+                            <ProgressBar
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_horizontal"
+                                android:indeterminate="true"
+                                android:indeterminateOnly="false"
+                                android:theme="@style/ProgressBarColor"
+                                />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <!--<TextView
+                        android:background="?android:attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="More"
+                        android:textColor="#546F7A"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        app:drawableBottomCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rajasthaniLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:id="@+id/rajasthaniTabButton"
+                            android:background="?android:attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_marginStart="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:text="Rajasthani"
+                                android:layout_gravity="center"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/secondary_text_color"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:text="Songs"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_marginStart="5dp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end|center_vertical"
+                            android:layout_marginEnd="15dp" >
+
+                            <ImageButton
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:id="@+id/loadMoreRajasthaniButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_right_arrow"
+                                android:padding="5dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rajasthaniRecyleview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="18dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="10dp"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never"/>
+
+                        <LinearLayout
+                            android:id="@+id/rajasthaniLoadingLayout"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/both_left_circular_bk"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_gravity="end|center"
+                            android:layout_marginBottom="30dp"
+                            android:visibility="gone">
+
+                            <ProgressBar
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_horizontal"
+                                android:indeterminate="true"
+                                android:indeterminateOnly="false"
+                                android:theme="@style/ProgressBarColor"
+                                />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_adplaceholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/bhojpuriLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:id="@+id/bhojpuriTabButton"
+                            android:background="?android:attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_marginStart="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:text="Bhojpuri"
+                                android:layout_gravity="center"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/secondary_text_color"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:text="Songs"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_marginStart="5dp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end|center_vertical"
+                            android:layout_marginEnd="15dp" >
+
+                            <ImageButton
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:id="@+id/loadMoreBhojpuriButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_right_arrow"
+                                android:padding="5dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/bhojpuriRecyleview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="18dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="10dp"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never"/>
+
+                        <LinearLayout
+                            android:id="@+id/bhojpuriLoadingLayout"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/both_left_circular_bk"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_gravity="end|center"
+                            android:layout_marginBottom="30dp"
+                            android:visibility="gone">
+
+                            <ProgressBar
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_horizontal"
+                                android:indeterminate="true"
+                                android:indeterminateOnly="false"
+                                android:theme="@style/ProgressBarColor"
+                                />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/haryanaviLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:id="@+id/haryanaviTabButton"
+                            android:background="?android:attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_marginStart="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:text="Haryanavi"
+                                android:layout_gravity="center"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/secondary_text_color"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:text="Songs"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_marginStart="5dp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end|center_vertical"
+                            android:layout_marginEnd="15dp" >
+
+                            <ImageButton
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:id="@+id/loadMoreHaryanaviButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_right_arrow"
+                                android:padding="5dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/haryanaviRecyleview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="18dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="10dp"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never"/>
+
+                        <LinearLayout
+                            android:id="@+id/haryanaviLoadingLayout"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/both_left_circular_bk"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_gravity="end|center"
+                            android:layout_marginBottom="30dp"
+                            android:visibility="gone">
+
+                            <ProgressBar
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_horizontal"
+                                android:indeterminate="true"
+                                android:indeterminateOnly="false"
+                                android:theme="@style/ProgressBarColor"
+                                />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/devotionalLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:id="@+id/devotionalTabButton"
+                            android:background="?android:attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_marginStart="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:text="Devotional"
+                                android:layout_gravity="center"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/secondary_text_color"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:text="Songs"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_marginStart="5dp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end|center_vertical"
+                            android:layout_marginEnd="15dp" >
+
+                            <ImageButton
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:id="@+id/loadMoreDevotionalButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_right_arrow"
+                                android:padding="5dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/devotionalRecyleview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="18dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="10dp"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never"/>
+
+                        <LinearLayout
+                            android:id="@+id/devotionalLoadingLayout"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/both_left_circular_bk"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_gravity="end|center"
+                            android:layout_marginBottom="30dp"
+                            android:visibility="gone">
+
+                            <ProgressBar
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_horizontal"
+                                android:indeterminate="true"
+                                android:indeterminateOnly="false"
+                                android:theme="@style/ProgressBarColor"
+                                />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rasiyaLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="40dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:id="@+id/rasiyaTabButton"
+                            android:background="?android:attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:layout_marginStart="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:text="Rasiya"
+                                android:layout_gravity="center"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/secondary_text_color"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:text="Songs"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_marginStart="5dp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end|center_vertical"
+                            android:layout_marginEnd="15dp" >
+
+                            <ImageButton
+                                android:background="?android:attr/selectableItemBackgroundBorderless"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:id="@+id/loadMoreRasiyaButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_right_arrow"
+                                android:padding="5dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rasiyaRecyleview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="18dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="10dp"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never"/>
+
+                        <LinearLayout
+                            android:id="@+id/rasiyaLoadingLayout"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/both_left_circular_bk"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_gravity="end|center"
+                            android:layout_marginBottom="30dp"
+                            android:visibility="gone">
+
+                            <ProgressBar
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_horizontal"
+                                android:indeterminate="true"
+                                android:indeterminateOnly="false"
+                                android:theme="@style/ProgressBarColor"
+                                />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </FrameLayout>
+
+</LinearLayout>
